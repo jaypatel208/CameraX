@@ -48,6 +48,7 @@ import androidx.compose.ui.unit.dp
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.viewmodel.compose.viewModel
+import com.example.camerax.presentation.CameraPreview
 import com.example.camerax.ui.theme.CameraXTheme
 import kotlinx.coroutines.launch
 import java.io.File

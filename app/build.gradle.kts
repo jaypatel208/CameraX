@@ -75,7 +75,6 @@ dependencies {
     implementation("androidx.camera:camera-lifecycle:${cameraxVersion}")
     implementation("androidx.camera:camera-video:${cameraxVersion}")
     implementation("androidx.camera:camera-view:${cameraxVersion}")
-    implementation("androidx.camera:camera-mlkit-vision:${cameraxVersion}")
     implementation("androidx.camera:camera-extensions:${cameraxVersion}")
 
     val lifecycleVersion = "2.6.2"
@@ -85,4 +84,9 @@ dependencies {
 
     // Animation
     implementation("androidx.compose.animation:animation:1.5.4")
+
+    // Tensorflow Dependency
+    implementation("org.tensorflow:tensorflow-lite-task-vision:0.4.4")
+    implementation("org.tensorflow:tensorflow-lite-gpu-delegate-plugin:0.4.4")
+    implementation("org.tensorflow:tensorflow-lite-gpu:2.14.0")
 }
