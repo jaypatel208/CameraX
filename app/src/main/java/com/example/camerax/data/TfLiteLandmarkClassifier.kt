@@ -58,7 +58,7 @@ class TfLiteLandmarkClassifier(
             Surface.ROTATION_0 -> ImageProcessingOptions.Orientation.RIGHT_TOP
             Surface.ROTATION_90 -> ImageProcessingOptions.Orientation.TOP_LEFT
             Surface.ROTATION_180 -> ImageProcessingOptions.Orientation.RIGHT_BOTTOM
-            else -> ImageProcessingOptions.Orientation.BOTTOM_RIGHT
+            else -> ImageProcessingOptions.Orientation.RIGHT_TOP
         }
     }
 }
