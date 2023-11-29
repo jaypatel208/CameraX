@@ -4,6 +4,7 @@ package com.example.camerax
 
 import android.Manifest
 import android.annotation.SuppressLint
+import android.content.Context
 import android.content.pm.PackageManager
 import android.graphics.Bitmap
 import android.graphics.Matrix
@@ -63,6 +64,7 @@ import com.example.camerax.presentation.LandmarkImageAnalyzer
 import com.example.camerax.ui.theme.CameraXTheme
 import kotlinx.coroutines.launch
 import java.io.File
+import kotlin.reflect.KFunction2
 
 class MainActivity : ComponentActivity() {
 
@@ -171,7 +173,7 @@ class MainActivity : ComponentActivity() {
         }
     }
 
-    private fun takePhoto(controller: LifecycleCameraController, onPhotoTaken: (Bitmap) -> Unit) {
+    private fun takePhoto(controller: LifecycleCameraController, onPhotoTaken: KFunction2<Bitmap, Context, Unit>) {
         if (!hasRequiredPermissions()) {
             return
         }
@@ -185,7 +187,7 @@ class MainActivity : ComponentActivity() {
                 val rotatedBitmap = Bitmap.createBitmap(
                     image.toBitmap(), 0, 0, image.width, image.height, matrix, true
                 )
-                onPhotoTaken(rotatedBitmap)
+                onPhotoTaken(rotatedBitmap, applicationContext)
             }
 
             override fun onError(exception: ImageCaptureException) {
